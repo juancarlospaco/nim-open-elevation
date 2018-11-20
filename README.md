@@ -69,6 +69,11 @@ wait_for async_oe()
 # API
 
 - API Calls use [the DoNotTrack HTTP Header.](https://en.wikipedia.org/wiki/Do_Not_Track)
+- This Library uses API Version from Year `2018`.
+- All procs should return an JSON Object `JsonNode` type.
+- API Calls use HTTP `GET` and `POST`.
+- Coordinates are `float32`.
+- API Calls are Anonymous and use a blank User-Agent.
 - The `timeout` argument is on Seconds.
 - For Proxy support define a `proxy` of `Proxy` type.
 - No OS-specific code, so it should work on Linux, Windows and Mac. Not JS.
