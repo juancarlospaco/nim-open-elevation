@@ -44,7 +44,7 @@ proc lookup*(this: OpenElevation | AsyncOpenElevation, locations: JsonNode): Fut
 
 when is_main_module and not defined(js):
   import parseopt, terminal, random
-  {.optimization: size.}
+  {.passL: "-s", passC: "-flto -ffast-math", optimization: size.}
   const helpy = """
   Get the Elevation in Meters of any specific place in the world (0=Sea level),
   using the Open Elevation for OpenStreetMap API online services.
@@ -76,13 +76,13 @@ when is_main_module and not defined(js):
     case tipoDeClave
     of cmdShortOption, cmdLongOption:
       case clave
-      of "version":                      quit("0.1.5", 0)
-      of "license", "licencia":          quit("MIT", 0)
-      of "help", "ayuda":                quit(helpy, 0)
-      of "minusculas", "lower":          minusculas = true
-      of "ugly", "fea":                  fea = true
-      of "timeout":                      taimaout = valor.parseInt.byte # HTTTP Timeout.
-      of "lat", "latitude", "latitud":   lat = valor.parseFloat.float32
+      of "version":             quit("0.1.5", 0)
+      of "license", "licencia": quit("MIT", 0)
+      of "help", "ayuda":       quit(helpy, 0)
+      of "minusculas", "lower": minusculas = true
+      of "ugly", "fea":         fea = true
+      of "timeout":             taimaout = valor.parseInt.byte # HTTTP Timeout.
+      of "lat", "latitude", "latitud":    lat = valor.parseFloat.float32
       of "lon", "longitude", "longuitud": lon = valor.parseFloat.float32
       of "color":
         randomize()
