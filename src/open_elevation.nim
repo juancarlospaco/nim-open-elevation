@@ -1,5 +1,5 @@
 import asyncdispatch, httpclient, strutils, json
-{.passL: "-s".}
+
 const open_elevation_url* = "https://api.open-elevation.com/api/v1/lookup" ## Open Elevation API URL
 
 type

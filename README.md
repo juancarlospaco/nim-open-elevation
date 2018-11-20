@@ -51,6 +51,8 @@ wait_for async_oe()
 
 # Command Line App
 
+![](temp.jpg)
+
 - For Uglyfied JSON use ``--ugly`` (does not reduce bandwith usage).
 - The App supports English and Spanish.
 
