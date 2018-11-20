@@ -1,4 +1,3 @@
-
 import asyncdispatch, httpclient, strutils, json
 {.passL: "-s".}
 const open_elevation_url* = "https://api.open-elevation.com/api/v1/lookup" ## Open Elevation API URL
@@ -84,7 +83,7 @@ when is_main_module and not defined(js):
       of "ugly", "fea":                  fea = true
       of "timeout":                      taimaout = valor.parseInt.byte # HTTTP Timeout.
       of "lat", "latitude", "latitud":   lat = valor.parseFloat.float32
-      of "lon", "longitude", "longitud": lon = valor.parseFloat.float32
+      of "lon", "longitude", "longuitud": lon = valor.parseFloat.float32
       of "color":
         randomize()
         setBackgroundColor(bgBlack)
