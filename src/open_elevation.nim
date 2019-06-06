@@ -87,7 +87,7 @@ when is_main_module and not defined(js):
       of "color":
         randomize()
         setBackgroundColor(bgBlack)
-        setForegroundColor([fgRed, fgGreen, fgYellow, fgBlue, fgMagenta, fgCyan, fgWhite].rand)
+        setForegroundColor([fgRed, fgGreen, fgYellow, fgBlue, fgMagenta, fgCyan, fgWhite].sample)
     of cmdArgument:
       json_query = clave.string.parseJson
     of cmdEnd: quit("Wrong Parameters, see Help with --help", 1)
